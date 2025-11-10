@@ -50,9 +50,16 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         },
         error: (error) => {
-          this.errorMessage = error.error?.message || 'Error al iniciar sesión';
+            if (error.error?.message) {
+            this.errorMessage = error.error.message;
+          } else if (error.status === 0) {
+            this.errorMessage = 'No se pudo conectar al servidor';
+          } else {
+            this.errorMessage = 'Error al iniciar sesión';
+          }
+
           this.loading = false;
-        }
+          }
       });
     }
   }
