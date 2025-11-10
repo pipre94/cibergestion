@@ -1,0 +1,29 @@
+<div class="vote-header">
+  <h1>Sistema de Votación NPS</h1>
+  <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+<div class="vote-container" *ngIf="!submitted; else thanksTemplate">
+  <h2>¿Qué tan probable es que recomiendes nuestro servicio? (0-10)</h2>
+  <form [formGroup]="voteForm" (ngSubmit)="onSubmit()">
+    <div class="score-buttons">
+      <button
+        type="button"
+        *ngFor="let s of scores"
+        [class.selected]="voteForm.value.score === s"
+        (click)="voteForm.controls['score'].setValue(s)"
+      >
+        {{ s }}
+      </button>
+    </div>
+    <div *ngIf="voteForm.get('score')?.invalid && voteForm.get('score')?.touched">
+      Campo requerido
+    </div>
+    <button type="submit" [disabled]="voteForm.invalid">Enviar voto</button>
+  </form>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>
+
+<ng-template #thanksTemplate>
+  <h3>¡Gracias por tu votación!</h3>
+</ng-template>

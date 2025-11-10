@@ -1,0 +1,16 @@
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cibergestion.Microservices.Nps.UseCase.NpsUser.CreateUser
+{
+    public class CreateUserRequest : IRequest<int>
+    {
+        public required string Username { get; set; }
+        public required string Password { get; set; }
+        public required string Role { get; set; }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="vote-header">
+  <h1>Sistema de Votación NPS</h1>
+  <div class="nps-value">Score {{ valueNps }}</div>
+  <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+
+<div class="results-container">
+  <h2>Resultados de Votaciones</h2>
+
+  <div *ngIf="loading" class="loading">Cargando...</div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="!loading && votes.length > 0">
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Puntuación</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vote of votes">
+          <td>{{ vote.name }}</td>
+          <td>{{ vote.score }}/10</td>
+          <td>{{ vote.created | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!loading && votes.length === 0" class="no-data">
+    No hay votos registrados
+  </div>
+</div>

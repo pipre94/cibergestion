@@ -1,0 +1,142 @@
+.results-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.results-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.loading, .error, .no-data {
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  background-color: #ffe6e6;
+}
+
+.no-data {
+  color: #666;
+}
+
+
+
+.vote-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #b71c1c;
+}
+
+.vote-container {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.score-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.score-buttons button {
+  padding: 15px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.score-buttons button:hover {
+  border-color: #667eea;
+  background: #f0f0f0;
+}
+
+.score-buttons button.selected {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #d32f2f;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+
+.vote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+
+  h1 {
+    margin: 0;
+    color: #333;
+  }
+
+  .nps-value {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+  }
+
+  .logout-btn {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #b71c1c;
+    }
+  }
+}
+
